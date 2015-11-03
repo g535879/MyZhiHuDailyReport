@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ADED862B1BE6DD4A00DC2FFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED862A1BE6DD4A00DC2FFF /* main.m */; };
+		ADED862E1BE6DD4A00DC2FFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED862D1BE6DD4A00DC2FFF /* AppDelegate.m */; };
+		ADED86341BE6DD4A00DC2FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADED86321BE6DD4A00DC2FFF /* Main.storyboard */; };
+		ADED86361BE6DD4A00DC2FFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADED86351BE6DD4A00DC2FFF /* Assets.xcassets */; };
+		ADED86391BE6DD4A00DC2FFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADED86371BE6DD4A00DC2FFF /* LaunchScreen.storyboard */; };
+		ADED86441BE6DD4A00DC2FFF /* ZhihuDailyReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED86431BE6DD4A00DC2FFF /* ZhihuDailyReportTests.m */; };
+		ADED864F1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED864E1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests.m */; };
+		ADED86641BE6E30900DC2FFF /* DesignDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED86611BE6E30900DC2FFF /* DesignDisplayView.m */; settings = {ASSET_TAGS = (); }; };
+		ADED86651BE6E30900DC2FFF /* DesignPicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED86631BE6E30900DC2FFF /* DesignPicScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		ADED86681BE6E3BA00DC2FFF /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED86671BE6E3BA00DC2FFF /* NewsModel.m */; settings = {ASSET_TAGS = (); }; };
+		ADED866E1BE6E53100DC2FFF /* image00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADED86691BE6E53100DC2FFF /* image00.jpg */; settings = {ASSET_TAGS = (); }; };
+		ADED866F1BE6E53100DC2FFF /* image01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADED866A1BE6E53100DC2FFF /* image01.jpg */; settings = {ASSET_TAGS = (); }; };
+		ADED86701BE6E53100DC2FFF /* image02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADED866B1BE6E53100DC2FFF /* image02.jpg */; settings = {ASSET_TAGS = (); }; };
+		ADED86711BE6E53100DC2FFF /* image03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADED866C1BE6E53100DC2FFF /* image03.jpg */; settings = {ASSET_TAGS = (); }; };
+		ADED86721BE6E53100DC2FFF /* image04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADED866D1BE6E53100DC2FFF /* image04.jpg */; settings = {ASSET_TAGS = (); }; };
+		ADED86751BE6E55C00DC2FFF /* WelcomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED86741BE6E55C00DC2FFF /* WelcomViewController.m */; settings = {ASSET_TAGS = (); }; };
+		ADED867B1BE6E5B700DC2FFF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED867A1BE6E5B700DC2FFF /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
+		ADED867E1BE6E64800DC2FFF /* DailyNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED867D1BE6E64800DC2FFF /* DailyNewsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		ADED86801BE6EF8000DC2FFF /* zhihu_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ADED867F1BE6EF8000DC2FFF /* zhihu_logo.png */; settings = {ASSET_TAGS = (); }; };
+		ADED87BE1BE73F1000DC2FFF /* JsonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED87BD1BE73F1000DC2FFF /* JsonHelper.m */; settings = {ASSET_TAGS = (); }; };
+		ADED88581BE78A6500DC2FFF /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED88561BE78A6500DC2FFF /* NewsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		ADED88591BE78A6500DC2FFF /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADED88571BE78A6500DC2FFF /* NewsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		ADED885C1BE7BC9A00DC2FFF /* NewsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED885B1BE7BC9A00DC2FFF /* NewsContentViewController.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADED86401BE6DD4A00DC2FFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADED861E1BE6DD4A00DC2FFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADED86251BE6DD4A00DC2FFF;
+			remoteInfo = ZhihuDailyReport;
+		};
+		ADED864B1BE6DD4A00DC2FFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADED861E1BE6DD4A00DC2FFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADED86251BE6DD4A00DC2FFF;
+			remoteInfo = ZhihuDailyReport;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ADED86261BE6DD4A00DC2FFF /* ZhihuDailyReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDailyReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADED862A1BE6DD4A00DC2FFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ADED862C1BE6DD4A00DC2FFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ADED862D1BE6DD4A00DC2FFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ADED86331BE6DD4A00DC2FFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ADED86351BE6DD4A00DC2FFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ADED86381BE6DD4A00DC2FFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ADED863A1BE6DD4A00DC2FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADED863F1BE6DD4A00DC2FFF /* ZhihuDailyReportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhihuDailyReportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADED86431BE6DD4A00DC2FFF /* ZhihuDailyReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhihuDailyReportTests.m; sourceTree = "<group>"; };
+		ADED86451BE6DD4A00DC2FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADED864A1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhihuDailyReportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADED864E1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhihuDailyReportUITests.m; sourceTree = "<group>"; };
+		ADED86501BE6DD4A00DC2FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADED86601BE6E30900DC2FFF /* DesignDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignDisplayView.h; sourceTree = "<group>"; };
+		ADED86611BE6E30900DC2FFF /* DesignDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignDisplayView.m; sourceTree = "<group>"; };
+		ADED86621BE6E30900DC2FFF /* DesignPicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignPicScrollView.h; sourceTree = "<group>"; };
+		ADED86631BE6E30900DC2FFF /* DesignPicScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignPicScrollView.m; sourceTree = "<group>"; };
+		ADED86661BE6E3BA00DC2FFF /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsModel.h; path = Model/NewsModel.h; sourceTree = SOURCE_ROOT; };
+		ADED86671BE6E3BA00DC2FFF /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsModel.m; path = Model/NewsModel.m; sourceTree = SOURCE_ROOT; };
+		ADED86691BE6E53100DC2FFF /* image00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image00.jpg; sourceTree = "<group>"; };
+		ADED866A1BE6E53100DC2FFF /* image01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image01.jpg; sourceTree = "<group>"; };
+		ADED866B1BE6E53100DC2FFF /* image02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image02.jpg; sourceTree = "<group>"; };
+		ADED866C1BE6E53100DC2FFF /* image03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image03.jpg; sourceTree = "<group>"; };
+		ADED866D1BE6E53100DC2FFF /* image04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image04.jpg; sourceTree = "<group>"; };
+		ADED86731BE6E55C00DC2FFF /* WelcomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomViewController.h; path = ../WelcomViewController.h; sourceTree = "<group>"; };
+		ADED86741BE6E55C00DC2FFF /* WelcomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomViewController.m; path = ../WelcomViewController.m; sourceTree = "<group>"; };
+		ADED86791BE6E5B700DC2FFF /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		ADED867A1BE6E5B700DC2FFF /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		ADED867C1BE6E64800DC2FFF /* DailyNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyNewsViewController.h; sourceTree = "<group>"; };
+		ADED867D1BE6E64800DC2FFF /* DailyNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyNewsViewController.m; sourceTree = "<group>"; };
+		ADED867F1BE6EF8000DC2FFF /* zhihu_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhihu_logo.png; sourceTree = "<group>"; };
+		ADED87BC1BE73F1000DC2FFF /* JsonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonHelper.h; path = ../JsonHelper.h; sourceTree = "<group>"; };
+		ADED87BD1BE73F1000DC2FFF /* JsonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonHelper.m; path = ../JsonHelper.m; sourceTree = "<group>"; };
+		ADED88551BE78A6500DC2FFF /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		ADED88561BE78A6500DC2FFF /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		ADED88571BE78A6500DC2FFF /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		ADED885A1BE7BC9A00DC2FFF /* NewsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsContentViewController.h; sourceTree = "<group>"; };
+		ADED885B1BE7BC9A00DC2FFF /* NewsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsContentViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADED86231BE6DD4A00DC2FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADED863C1BE6DD4A00DC2FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADED86471BE6DD4A00DC2FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ADED861D1BE6DD4A00DC2FFF = {
+			isa = PBXGroup;
+			children = (
+				ADED87C21BE73F4100DC2FFF /* Common */,
+				ADED865C1BE6E2CD00DC2FFF /*  View */,
+				ADED865D1BE6E2CD00DC2FFF /* Model */,
+				ADED865E1BE6E2CD00DC2FFF /* Resources */,
+				ADED865F1BE6E2CD00DC2FFF /* ViewControllers */,
+				ADED86281BE6DD4A00DC2FFF /* ZhihuDailyReport */,
+				ADED86421BE6DD4A00DC2FFF /* ZhihuDailyReportTests */,
+				ADED864D1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests */,
+				ADED86271BE6DD4A00DC2FFF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ADED86271BE6DD4A00DC2FFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADED86261BE6DD4A00DC2FFF /* ZhihuDailyReport.app */,
+				ADED863F1BE6DD4A00DC2FFF /* ZhihuDailyReportTests.xctest */,
+				ADED864A1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADED86281BE6DD4A00DC2FFF /* ZhihuDailyReport */ = {
+			isa = PBXGroup;
+			children = (
+				ADED862C1BE6DD4A00DC2FFF /* AppDelegate.h */,
+				ADED862D1BE6DD4A00DC2FFF /* AppDelegate.m */,
+				ADED86321BE6DD4A00DC2FFF /* Main.storyboard */,
+				ADED86351BE6DD4A00DC2FFF /* Assets.xcassets */,
+				ADED86371BE6DD4A00DC2FFF /* LaunchScreen.storyboard */,
+				ADED863A1BE6DD4A00DC2FFF /* Info.plist */,
+				ADED86291BE6DD4A00DC2FFF /* Supporting Files */,
+			);
+			path = ZhihuDailyReport;
+			sourceTree = "<group>";
+		};
+		ADED86291BE6DD4A00DC2FFF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADED862A1BE6DD4A00DC2FFF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADED86421BE6DD4A00DC2FFF /* ZhihuDailyReportTests */ = {
+			isa = PBXGroup;
+			children = (
+				ADED86431BE6DD4A00DC2FFF /* ZhihuDailyReportTests.m */,
+				ADED86451BE6DD4A00DC2FFF /* Info.plist */,
+			);
+			path = ZhihuDailyReportTests;
+			sourceTree = "<group>";
+		};
+		ADED864D1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ADED864E1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests.m */,
+				ADED86501BE6DD4A00DC2FFF /* Info.plist */,
+			);
+			path = ZhihuDailyReportUITests;
+			sourceTree = "<group>";
+		};
+		ADED865C1BE6E2CD00DC2FFF /*  View */ = {
+			isa = PBXGroup;
+			children = (
+				ADED86601BE6E30900DC2FFF /* DesignDisplayView.h */,
+				ADED86611BE6E30900DC2FFF /* DesignDisplayView.m */,
+				ADED86621BE6E30900DC2FFF /* DesignPicScrollView.h */,
+				ADED86631BE6E30900DC2FFF /* DesignPicScrollView.m */,
+				ADED88551BE78A6500DC2FFF /* NewsTableViewCell.h */,
+				ADED88561BE78A6500DC2FFF /* NewsTableViewCell.m */,
+				ADED88571BE78A6500DC2FFF /* NewsTableViewCell.xib */,
+			);
+			path = " View";
+			sourceTree = "<group>";
+		};
+		ADED865D1BE6E2CD00DC2FFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADED86661BE6E3BA00DC2FFF /* NewsModel.h */,
+				ADED86671BE6E3BA00DC2FFF /* NewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ADED865E1BE6E2CD00DC2FFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADED867F1BE6EF8000DC2FFF /* zhihu_logo.png */,
+				ADED86691BE6E53100DC2FFF /* image00.jpg */,
+				ADED866A1BE6E53100DC2FFF /* image01.jpg */,
+				ADED866B1BE6E53100DC2FFF /* image02.jpg */,
+				ADED866C1BE6E53100DC2FFF /* image03.jpg */,
+				ADED866D1BE6E53100DC2FFF /* image04.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADED865F1BE6E2CD00DC2FFF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADED86731BE6E55C00DC2FFF /* WelcomViewController.h */,
+				ADED86741BE6E55C00DC2FFF /* WelcomViewController.m */,
+				ADED86791BE6E5B700DC2FFF /* RootViewController.h */,
+				ADED867A1BE6E5B700DC2FFF /* RootViewController.m */,
+				ADED867C1BE6E64800DC2FFF /* DailyNewsViewController.h */,
+				ADED867D1BE6E64800DC2FFF /* DailyNewsViewController.m */,
+				ADED885A1BE7BC9A00DC2FFF /* NewsContentViewController.h */,
+				ADED885B1BE7BC9A00DC2FFF /* NewsContentViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ADED87C21BE73F4100DC2FFF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ADED87BC1BE73F1000DC2FFF /* JsonHelper.h */,
+				ADED87BD1BE73F1000DC2FFF /* JsonHelper.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADED86251BE6DD4A00DC2FFF /* ZhihuDailyReport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADED86531BE6DD4A00DC2FFF /* Build configuration list for PBXNativeTarget "ZhihuDailyReport" */;
+			buildPhases = (
+				ADED86221BE6DD4A00DC2FFF /* Sources */,
+				ADED86231BE6DD4A00DC2FFF /* Frameworks */,
+				ADED86241BE6DD4A00DC2FFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZhihuDailyReport;
+			productName = ZhihuDailyReport;
+			productReference = ADED86261BE6DD4A00DC2FFF /* ZhihuDailyReport.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADED863E1BE6DD4A00DC2FFF /* ZhihuDailyReportTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADED86561BE6DD4A00DC2FFF /* Build configuration list for PBXNativeTarget "ZhihuDailyReportTests" */;
+			buildPhases = (
+				ADED863B1BE6DD4A00DC2FFF /* Sources */,
+				ADED863C1BE6DD4A00DC2FFF /* Frameworks */,
+				ADED863D1BE6DD4A00DC2FFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADED86411BE6DD4A00DC2FFF /* PBXTargetDependency */,
+			);
+			name = ZhihuDailyReportTests;
+			productName = ZhihuDailyReportTests;
+			productReference = ADED863F1BE6DD4A00DC2FFF /* ZhihuDailyReportTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ADED86491BE6DD4A00DC2FFF /* ZhihuDailyReportUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADED86591BE6DD4A00DC2FFF /* Build configuration list for PBXNativeTarget "ZhihuDailyReportUITests" */;
+			buildPhases = (
+				ADED86461BE6DD4A00DC2FFF /* Sources */,
+				ADED86471BE6DD4A00DC2FFF /* Frameworks */,
+				ADED86481BE6DD4A00DC2FFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADED864C1BE6DD4A00DC2FFF /* PBXTargetDependency */,
+			);
+			name = ZhihuDailyReportUITests;
+			productName = ZhihuDailyReportUITests;
+			productReference = ADED864A1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADED861E1BE6DD4A00DC2FFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = guyubin;
+				TargetAttributes = {
+					ADED86251BE6DD4A00DC2FFF = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 63349GKWYV;
+					};
+					ADED863E1BE6DD4A00DC2FFF = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 63349GKWYV;
+						TestTargetID = ADED86251BE6DD4A00DC2FFF;
+					};
+					ADED86491BE6DD4A00DC2FFF = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 63349GKWYV;
+						TestTargetID = ADED86251BE6DD4A00DC2FFF;
+					};
+				};
+			};
+			buildConfigurationList = ADED86211BE6DD4A00DC2FFF /* Build configuration list for PBXProject "ZhihuDailyReport" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADED861D1BE6DD4A00DC2FFF;
+			productRefGroup = ADED86271BE6DD4A00DC2FFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADED86251BE6DD4A00DC2FFF /* ZhihuDailyReport */,
+				ADED863E1BE6DD4A00DC2FFF /* ZhihuDailyReportTests */,
+				ADED86491BE6DD4A00DC2FFF /* ZhihuDailyReportUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADED86241BE6DD4A00DC2FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADED86711BE6E53100DC2FFF /* image03.jpg in Resources */,
+				ADED86721BE6E53100DC2FFF /* image04.jpg in Resources */,
+				ADED86391BE6DD4A00DC2FFF /* LaunchScreen.storyboard in Resources */,
+				ADED866E1BE6E53100DC2FFF /* image00.jpg in Resources */,
+				ADED88591BE78A6500DC2FFF /* NewsTableViewCell.xib in Resources */,
+				ADED86361BE6DD4A00DC2FFF /* Assets.xcassets in Resources */,
+				ADED86801BE6EF8000DC2FFF /* zhihu_logo.png in Resources */,
+				ADED86341BE6DD4A00DC2FFF /* Main.storyboard in Resources */,
+				ADED866F1BE6E53100DC2FFF /* image01.jpg in Resources */,
+				ADED86701BE6E53100DC2FFF /* image02.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADED863D1BE6DD4A00DC2FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADED86481BE6DD4A00DC2FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADED86221BE6DD4A00DC2FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADED86651BE6E30900DC2FFF /* DesignPicScrollView.m in Sources */,
+				ADED867E1BE6E64800DC2FFF /* DailyNewsViewController.m in Sources */,
+				ADED87BE1BE73F1000DC2FFF /* JsonHelper.m in Sources */,
+				ADED86751BE6E55C00DC2FFF /* WelcomViewController.m in Sources */,
+				ADED885C1BE7BC9A00DC2FFF /* NewsContentViewController.m in Sources */,
+				ADED86641BE6E30900DC2FFF /* DesignDisplayView.m in Sources */,
+				ADED862E1BE6DD4A00DC2FFF /* AppDelegate.m in Sources */,
+				ADED88581BE78A6500DC2FFF /* NewsTableViewCell.m in Sources */,
+				ADED867B1BE6E5B700DC2FFF /* RootViewController.m in Sources */,
+				ADED86681BE6E3BA00DC2FFF /* NewsModel.m in Sources */,
+				ADED862B1BE6DD4A00DC2FFF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADED863B1BE6DD4A00DC2FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADED86441BE6DD4A00DC2FFF /* ZhihuDailyReportTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADED86461BE6DD4A00DC2FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADED864F1BE6DD4A00DC2FFF /* ZhihuDailyReportUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ADED86411BE6DD4A00DC2FFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADED86251BE6DD4A00DC2FFF /* ZhihuDailyReport */;
+			targetProxy = ADED86401BE6DD4A00DC2FFF /* PBXContainerItemProxy */;
+		};
+		ADED864C1BE6DD4A00DC2FFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADED86251BE6DD4A00DC2FFF /* ZhihuDailyReport */;
+			targetProxy = ADED864B1BE6DD4A00DC2FFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ADED86321BE6DD4A00DC2FFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADED86331BE6DD4A00DC2FFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ADED86371BE6DD4A00DC2FFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADED86381BE6DD4A00DC2FFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ADED86511BE6DD4A00DC2FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ADED86521BE6DD4A00DC2FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ADED86541BE6DD4A00DC2FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZhihuDailyReport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ADED86551BE6DD4A00DC2FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZhihuDailyReport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		ADED86571BE6DD4A00DC2FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZhihuDailyReportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZhihuDailyReportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZhihuDailyReport.app/ZhihuDailyReport";
+			};
+			name = Debug;
+		};
+		ADED86581BE6DD4A00DC2FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZhihuDailyReportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZhihuDailyReportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZhihuDailyReport.app/ZhihuDailyReport";
+			};
+			name = Release;
+		};
+		ADED865A1BE6DD4A00DC2FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZhihuDailyReportUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZhihuDailyReportUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZhihuDailyReport;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		ADED865B1BE6DD4A00DC2FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZhihuDailyReportUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZhihuDailyReportUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZhihuDailyReport;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADED86211BE6DD4A00DC2FFF /* Build configuration list for PBXProject "ZhihuDailyReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADED86511BE6DD4A00DC2FFF /* Debug */,
+				ADED86521BE6DD4A00DC2FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADED86531BE6DD4A00DC2FFF /* Build configuration list for PBXNativeTarget "ZhihuDailyReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADED86541BE6DD4A00DC2FFF /* Debug */,
+				ADED86551BE6DD4A00DC2FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ADED86561BE6DD4A00DC2FFF /* Build configuration list for PBXNativeTarget "ZhihuDailyReportTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADED86571BE6DD4A00DC2FFF /* Debug */,
+				ADED86581BE6DD4A00DC2FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ADED86591BE6DD4A00DC2FFF /* Build configuration list for PBXNativeTarget "ZhihuDailyReportUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADED865A1BE6DD4A00DC2FFF /* Debug */,
+				ADED865B1BE6DD4A00DC2FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADED861E1BE6DD4A00DC2FFF /* Project object */;
+}
