@@ -51,6 +51,7 @@
     self.imageDataDic = [@{} mutableCopy]; //初始化图片数据字典
     [self initDisplay]; //初始化显示。加载前三张
     [self loadImage]; //异步加载图片(后面2张)
+    
     _pageController.numberOfPages = _imageModelArray.count ;//总图片数
 
 }
