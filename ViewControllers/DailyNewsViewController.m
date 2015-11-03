@@ -80,7 +80,7 @@ typedef void (^GetImageData)(NSData *imageData);
 //    //空白图层
 ////    D *_clearView = [[UIView alloc] ];
 //    DesignDisplayView *_clearView = [[DesignDisplayView alloc] initWithFrame:CGRectMake(0, 0, MAX_WIDTH, MAX_HEIGHT/3)];
-//    _clearView.picDesription = @"带婴儿坐飞机，需要做什么准备？";
+//    _clearView.picDesription = @"带婴儿坐飞机，需要做什么准sdsd备？";
 //    [_clearView setBackgroundColor:[UIColor clearColor]];
     _tableView.tableHeaderView = _scrollview;
 }
