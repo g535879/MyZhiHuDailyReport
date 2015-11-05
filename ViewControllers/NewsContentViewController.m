@@ -42,6 +42,8 @@
 //布局
 - (void)setLayout {
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, MAX_WIDTH, MAX_HEIGHT)];
+    
+//    self.navigationItem.hidesBackButton = YES;
 //    _webView.scrollView.scrollEnabled = NO;
     
     //tableview

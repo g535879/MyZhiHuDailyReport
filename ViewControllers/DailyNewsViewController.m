@@ -30,6 +30,8 @@ typedef void (^GetImageData)(NSData *imageData);
     UITableView *_tableView; //表格视图
     DesignDisplayView *_currentImageView; //当前显示的滚动图
     MBProgressHUD *_progressView; //加载框
+    UIView *_titleView;//遮罩view
+    
     
 }
 
@@ -38,28 +40,34 @@ typedef void (^GetImageData)(NSData *imageData);
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setData]; //加载数据
+    [self setNavigationRefer]; //导航栏相关
     [self setLayout]; //布局
     
 
     
 }
 
-//在这里隐藏导航栏
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
-//    self.navigationController.navigationBar.translucent = NO;
-//    self.navigationController.navigationBarHidden = YES;
-//    [self.navigationController.navigationBar setAlpha:0.5];[
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:255 green:255 blue:255 alpha:1.0]] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationController.navigationBar.layer setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5].CGColor];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bigShadow.png"] forBarMetrics:UIBarMetricsCompactPrompt];
-}
+
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.navigationController.navigationBarHidden = NO;
 }
+
+- (void)setNavigationRefer {
+//    self.navigationItem.title = @"今日热文";
+    UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
+    [tLabel setTextColor:[UIColor whiteColor]];
+    tLabel.text = @"今日头条";
+    self.navigationItem.titleView = tLabel;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bigShadow.png"] forBarMetrics:UIBarMetricsCompactPrompt];
+    _titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAX_WIDTH, 64)];
+    [_titleView setBackgroundColor:[UIColor colorWithRed:0.41f green:0.79f blue:0.97f alpha:1.00f]];
+    [self.navigationController.view insertSubview:_titleView belowSubview:self.navigationController.navigationBar];
+    self.navigationController.navigationBar.layer.masksToBounds = YES;
+    [_titleView setAlpha:0];
+}
+
 //加载数据
 - (void)setData {
     if (!_dataArray) {
@@ -75,21 +83,21 @@ typedef void (^GetImageData)(NSData *imageData);
 //布局
 - (void)setLayout {
     
-    self.navigationItem.title = @"今日热文";
+
     //上方背景图
-    _currentImageView = [[DesignDisplayView alloc] initWithFrame:CGRectMake(0, -20, MAX_WIDTH, MAX_HEIGHT/3+70)];
+    _currentImageView = [[DesignDisplayView alloc] initWithFrame:CGRectMake(0, -30, MAX_WIDTH, MAX_HEIGHT/3+70)];
     _currentImageView.hidden = YES;
     [self.view addSubview:_currentImageView];
     
     //滚动视图
-    _scrollview = [[DesignPicScrollView alloc] initWithFrame:CGRectMake(0,-20, MAX_WIDTH, MAX_HEIGHT/3)];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -20, MAX_WIDTH, MAX_HEIGHT) style:UITableViewStylePlain];
+    _scrollview = [[DesignPicScrollView alloc] initWithFrame:CGRectMake(0,-30, MAX_WIDTH, MAX_HEIGHT/3)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -30, MAX_WIDTH, MAX_HEIGHT) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView setBackgroundColor:[UIColor clearColor]];
     _tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_tableView];
-    
     _tableView.tableHeaderView = _scrollview;
     
     
@@ -128,13 +136,16 @@ typedef void (^GetImageData)(NSData *imageData);
                     //存入数组中
                     [_topNewsArray addObject:model];
                 }
+                _scrollview.imageModelArray = _topNewsArray;
                 //放入到scrollvew中,取前5个数据
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    _scrollview.imageModelArray = _topNewsArray;
                     //刷新tableview
                     [_tableView reloadData];
                     //关闭小菊花
                     [_progressView setHidden:YES];
+                    
+                    //显示分割线
+                    _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
                 });
                 
             }
@@ -238,7 +249,7 @@ typedef void (^GetImageData)(NSData *imageData);
             _currentImageView.center = imageViewCenter;
         }
         
-    }else if (y >=0 && y <= 150){ //用户往上推。调整字体的位置
+    }else if (y >=0 && y <= 127){ //用户往上推。调整字体的位置
         UILabel *label = (UILabel *)_currentImageView.subviews[1]; //图片描述
         static CGFloat originalY;  //描述原始中点y
         static dispatch_once_t once;
@@ -250,6 +261,7 @@ typedef void (^GetImageData)(NSData *imageData);
         CGPoint labelCenter = [label center];
         labelCenter.y = originalY - fabs(y);
         label.center = labelCenter;
+        [_titleView setAlpha:y/127.0];
 
     }
 }

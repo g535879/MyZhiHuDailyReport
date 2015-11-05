@@ -101,6 +101,7 @@
 //更新自定义视图图片和文字描述
 - (void)updateImage:(DesignDisplayView *)view withDesignModel:(NewsModel *)model {
     id obj = self.imageDataDic[[NSNumber numberWithInteger:[self.imageModelArray indexOfObject:model]]]; //获取该字典中key对应的图片
+
     if ([obj isKindOfClass:[UIImage class]]) { //是图片数据
         [self updateView:view withDesignModel:obj];
     }
@@ -112,7 +113,11 @@
 
     }
     
-    view.picDesription = model.title;
+    //主线程刷新
+    dispatch_async(dispatch_get_main_queue(), ^{
+        view.picDesription = model.title;
+    });
+
 }
 
 #pragma mark - 滚动视图协议代理
