@@ -24,7 +24,7 @@
         _bgImageView = [[UIImageView alloc] initWithFrame:self.bounds];
         _bgImageView.userInteractionEnabled = YES;
         [self addSubview:_bgImageView];
-        _descpitionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, frame.size.height - 90, frame.size.width-20, 80)];
+        _descpitionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, frame.size.height - 150, frame.size.width-20, 80)];
         _descpitionLabel.numberOfLines = 2;
         //透明度
         //_descpitionLabel.backgroundColor = [UIColor colorWithRed:0.33 green:0.33 blue:0.33 alpha:0.3];

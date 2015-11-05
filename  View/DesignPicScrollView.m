@@ -37,7 +37,6 @@
         self.contentOffset = CGPointMake(_viewWidth, 0);
         self.pagingEnabled = YES;
         self.delegate = self;
-        self.clipsToBounds = NO;
         [self setDatailLayout]; //设置布局
 
     }
@@ -59,12 +58,12 @@
 - (void)setDatailLayout {
     
     //imageView
-    _leftImageView = [[DesignDisplayView alloc] initWithFrame:CGRectMake(0, 0, _viewWidth, _viewHeight)];
+    _leftImageView = [[DesignDisplayView alloc] initWithFrame:CGRectMake(0, 0, _viewWidth, _viewHeight+70)];
     [self addSubview:_leftImageView];
-    _centerImageView =[[DesignDisplayView alloc] initWithFrame:CGRectMake(_viewWidth, 0, _viewWidth, _viewHeight)];
+    _centerImageView =[[DesignDisplayView alloc] initWithFrame:CGRectMake(_viewWidth, 0, _viewWidth, _viewHeight+70)];
     [self addSubview:_centerImageView];
     //rightImageView
-    _rightImageView = [[DesignDisplayView alloc]initWithFrame:CGRectMake(_viewWidth * 2, 0, _viewWidth, _viewHeight)];
+    _rightImageView = [[DesignDisplayView alloc]initWithFrame:CGRectMake(_viewWidth * 2, 0, _viewWidth, _viewHeight+70)];
     [self addSubview:_rightImageView];
     
     //pageControll
@@ -146,7 +145,8 @@
 - (void)requestImage:(DesignDisplayView *)view withDesignModel:(NewsModel *)model {
     NSString *imagePath = model.images;
     NSURL *imageUrl = [NSURL URLWithString:[imagePath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageUrl]];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
+    UIImage *image = [UIImage imageWithData:imageData];
 
     if (image) {
         
@@ -159,6 +159,8 @@
         
         //保存图片到字典
         [self.imageDataDic setObject:image forKey:[NSNumber numberWithInteger:[self.imageModelArray indexOfObject:model]]];
+        //保存图片到model
+        model.imageData = imageData;
     }
     
 }

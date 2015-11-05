@@ -17,6 +17,7 @@
     UIWebView *_webView;
     NSCondition *_condition;
     UITableView *_tableview;
+
 }
 
 @end
@@ -55,6 +56,7 @@
 //    displayView.bgImage = [UIImage imageWithData:self.newsModel.imageData];
 //    displayView.picDesription = self.newsModel.title;
 //    _tableview.tableHeaderView = displayView;
+    
     
     
         

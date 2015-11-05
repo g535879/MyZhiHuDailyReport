@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD8CCC871BE98A24001F0BE3 /* bgImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD8CCC861BE98A24001F0BE3 /* bgImage.jpg */; settings = {ASSET_TAGS = (); }; };
+		ADBF468B1BEB850D0069C3C9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF468A1BEB850D0069C3C9 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 		ADED862B1BE6DD4A00DC2FFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED862A1BE6DD4A00DC2FFF /* main.m */; };
 		ADED862E1BE6DD4A00DC2FFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED862D1BE6DD4A00DC2FFF /* AppDelegate.m */; };
 		ADED86341BE6DD4A00DC2FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADED86321BE6DD4A00DC2FFF /* Main.storyboard */; };
@@ -50,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD8CCC861BE98A24001F0BE3 /* bgImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgImage.jpg; sourceTree = "<group>"; };
+		ADBF46891BEB850D0069C3C9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		ADBF468A1BEB850D0069C3C9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		ADED86261BE6DD4A00DC2FFF /* ZhihuDailyReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDailyReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADED862A1BE6DD4A00DC2FFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADED862C1BE6DD4A00DC2FFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,9 +121,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADBF46871BEB84F80069C3C9 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF46881BEB850D0069C3C9 /* MBProgresss */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		ADBF46881BEB850D0069C3C9 /* MBProgresss */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF46891BEB850D0069C3C9 /* MBProgressHUD.h */,
+				ADBF468A1BEB850D0069C3C9 /* MBProgressHUD.m */,
+			);
+			path = MBProgresss;
+			sourceTree = "<group>";
+		};
 		ADED861D1BE6DD4A00DC2FFF = {
 			isa = PBXGroup;
 			children = (
+				ADBF46871BEB84F80069C3C9 /* Library */,
 				ADED87C21BE73F4100DC2FFF /* Common */,
 				ADED865C1BE6E2CD00DC2FFF /*  View */,
 				ADED865D1BE6E2CD00DC2FFF /* Model */,
@@ -207,6 +230,7 @@
 		ADED865E1BE6E2CD00DC2FFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD8CCC861BE98A24001F0BE3 /* bgImage.jpg */,
 				ADED867F1BE6EF8000DC2FFF /* zhihu_logo.png */,
 				ADED86691BE6E53100DC2FFF /* image00.jpg */,
 				ADED866A1BE6E53100DC2FFF /* image01.jpg */,
@@ -355,6 +379,7 @@
 				ADED86361BE6DD4A00DC2FFF /* Assets.xcassets in Resources */,
 				ADED86801BE6EF8000DC2FFF /* zhihu_logo.png in Resources */,
 				ADED86341BE6DD4A00DC2FFF /* Main.storyboard in Resources */,
+				AD8CCC871BE98A24001F0BE3 /* bgImage.jpg in Resources */,
 				ADED866F1BE6E53100DC2FFF /* image01.jpg in Resources */,
 				ADED86701BE6E53100DC2FFF /* image02.jpg in Resources */,
 			);
@@ -388,6 +413,7 @@
 				ADED885C1BE7BC9A00DC2FFF /* NewsContentViewController.m in Sources */,
 				ADED86641BE6E30900DC2FFF /* DesignDisplayView.m in Sources */,
 				ADED862E1BE6DD4A00DC2FFF /* AppDelegate.m in Sources */,
+				ADBF468B1BEB850D0069C3C9 /* MBProgressHUD.m in Sources */,
 				ADED88581BE78A6500DC2FFF /* NewsTableViewCell.m in Sources */,
 				ADED867B1BE6E5B700DC2FFF /* RootViewController.m in Sources */,
 				ADED86681BE6E3BA00DC2FFF /* NewsModel.m in Sources */,
@@ -621,6 +647,7 @@
 				ADED86551BE6DD4A00DC2FFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADED86561BE6DD4A00DC2FFF /* Build configuration list for PBXNativeTarget "ZhihuDailyReportTests" */ = {
 			isa = XCConfigurationList;
@@ -629,6 +656,7 @@
 				ADED86581BE6DD4A00DC2FFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADED86591BE6DD4A00DC2FFF /* Build configuration list for PBXNativeTarget "ZhihuDailyReportUITests" */ = {
 			isa = XCConfigurationList;
@@ -637,6 +665,7 @@
 				ADED865B1BE6DD4A00DC2FFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

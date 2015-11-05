@@ -13,15 +13,23 @@
 #import "NewsTableViewCell.h"
 #import "NewsContentViewController.h"
 #import "DesignDisplayView.h"
+#import "MBProgressHUD.h"
+
+
 
 #define MAX_WIDTH [UIScreen mainScreen].bounds.size.width
 #define MAX_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define SCROVIEW_HEIGHT MAX_HEIGHT/3
 typedef void (^GetImageData)(NSData *imageData);
 
 @interface DailyNewsViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSMutableArray *_dataArray; //数据源
+    NSMutableArray *_topNewsArray; //头条新闻数组
     DesignPicScrollView *_scrollview; //滚动视图
     UITableView *_tableView; //表格视图
+    DesignDisplayView *_currentImageView; //当前显示的滚动图
+    MBProgressHUD *_progressView; //加载框
     
 }
 
@@ -32,12 +40,14 @@ typedef void (^GetImageData)(NSData *imageData);
     [self setData]; //加载数据
     [self setLayout]; //布局
     
+
+    
 }
 
 //在这里隐藏导航栏
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-   // self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 //    self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBarHidden = YES;
 //    [self.navigationController.navigationBar setAlpha:0.5];[
@@ -55,6 +65,9 @@ typedef void (^GetImageData)(NSData *imageData);
     if (!_dataArray) {
         _dataArray = [@[] mutableCopy];
     }
+    if (!_topNewsArray) {
+        _topNewsArray = [@[] mutableCopy];
+    }
     //异步加载新闻数据
     [self performSelectorInBackground:@selector(asyncDownloadPic) withObject:nil];
 }
@@ -63,26 +76,29 @@ typedef void (^GetImageData)(NSData *imageData);
 - (void)setLayout {
     
     self.navigationItem.title = @"今日热文";
+    //上方背景图
+    _currentImageView = [[DesignDisplayView alloc] initWithFrame:CGRectMake(0, -20, MAX_WIDTH, MAX_HEIGHT/3+70)];
+    _currentImageView.hidden = YES;
+    [self.view addSubview:_currentImageView];
     
     //滚动视图
-    _scrollview = [[DesignPicScrollView alloc] initWithFrame:CGRectMake(0, 0, MAX_WIDTH, MAX_HEIGHT/3+20)];
-//    [self.view addSubview:_scrollview];
-    
-    //tablevie
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MAX_WIDTH, MAX_HEIGHT) style:UITableViewStylePlain];
+    _scrollview = [[DesignPicScrollView alloc] initWithFrame:CGRectMake(0,-20, MAX_WIDTH, MAX_HEIGHT/3)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -20, MAX_WIDTH, MAX_HEIGHT) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView setBackgroundColor:[UIColor clearColor]];
     _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.contentOffset = CGPointMake(0, -64);
     [self.view addSubview:_tableView];
     
-//    //空白图层
-////    D *_clearView = [[UIView alloc] ];
-//    DesignDisplayView *_clearView = [[DesignDisplayView alloc] initWithFrame:CGRectMake(0, 0, MAX_WIDTH, MAX_HEIGHT/3)];
-//    _clearView.picDesription = @"带婴儿坐飞机，需要做什么准sdsd备？";
-//    [_clearView setBackgroundColor:[UIColor clearColor]];
     _tableView.tableHeaderView = _scrollview;
+    
+    
+    //加载框
+    _progressView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [_progressView setDimBackground:YES];
+    [_progressView setHidden:NO];
+
+
 }
 
 #pragma mark - 异步下载图片
@@ -93,20 +109,32 @@ typedef void (^GetImageData)(NSData *imageData);
         if ([Jsonobj isKindOfClass:[NSDictionary class]]) {
             NSDictionary *dic = (NSDictionary *)Jsonobj;
             NSArray *dataArray = dic[@"stories"];
+            NSArray *topStories = dic[@"top_stories"];
             if (dataArray.count) {
                 for (NSDictionary *dic in dataArray) {
-                    NewsModel *model = [[NewsModel alloc] init]; //建立数据模型
+                    NewsModel *model = [[NewsModel alloc] init]; //下方新闻建立数据模型
                     model.images = [dic[@"images"] firstObject];
                     model.title = dic[@"title"];
                     model.uId = [dic[@"id"] integerValue];
                     //存入数组中
                     [_dataArray addObject:model];
                 }
+                //头条
+                for (NSDictionary *dic in topStories) {
+                    NewsModel *model = [[NewsModel alloc] init]; //头条建立数据模型
+                    model.images = dic[@"image"];
+                    model.title = dic[@"title"];
+                    model.uId = [dic[@"id"] integerValue];
+                    //存入数组中
+                    [_topNewsArray addObject:model];
+                }
                 //放入到scrollvew中,取前5个数据
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    _scrollview.imageModelArray = [_dataArray objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 5)]];
+                    _scrollview.imageModelArray = _topNewsArray;
                     //刷新tableview
                     [_tableView reloadData];
+                    //关闭小菊花
+                    [_progressView setHidden:YES];
                 });
                 
             }
@@ -173,24 +201,74 @@ typedef void (^GetImageData)(NSData *imageData);
 }
 
 #pragma mark - scorolview delegate
-//拖动偏移量限制在-155
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat y = scrollView.contentOffset.y;
     CGFloat x = scrollView.contentOffset.x;
-    NSLog(@"%f",y);
+   // NSLog(@"%f",y);
     if (y < 0) {
-        if (y <= -95) {
-            scrollView.contentOffset = CGPointMake(x, -95);
+        if (y <= -40) {
+            scrollView.contentOffset = CGPointMake(x, -40);
             return;
         }
-        UIImageView *centerImageView = [_scrollview subviews][1];
-//        CGRect rect = centerImageView.frame;
-//        rect.size.height+=10;
-//        centerImageView.frame = rect;
+       //调整图片大小和位置
+        if (_scrollview.hidden) { //滚动视图隐藏状态
+            CGRect rect = _currentImageView.frame;
+            NSLog(@"pic++++++++++++Y%f",rect.origin.y);
+            UILabel *label = (UILabel *)_currentImageView.subviews[1]; //图片描述
+            
+            static CGFloat originalY;  //描述原始中点y
+            static CGFloat bgOriginalH; //图片原始高度
+            static CGFloat bgOriginalCenterY; //图片中心点原始位置
+           static dispatch_once_t once;
+            dispatch_once(&once, ^{
+                originalY = label.center.y;
+                bgOriginalCenterY = _currentImageView.center.y;
+                bgOriginalH = _currentImageView.frame.size.height;
+            });
+            //描述
+            CGPoint labelCenter = [label center];
+            labelCenter.y = originalY +fabs(y);
+            label.center = labelCenter;
+            
+            //图片
+            CGPoint imageViewCenter = _currentImageView.center;
+            imageViewCenter.y = bgOriginalCenterY + fabs(y);
+            CGRect frame = _currentImageView.frame;
+            frame.size.height = bgOriginalH + fabs(y);
+            _currentImageView.frame = frame;
+            _currentImageView.center = imageViewCenter;
+        }
         
     }
-    
+}
 
+////开始滚动,调整图片显示方式
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    CGFloat y = scrollView.contentOffset.y;
+    if (y == 0){
+        if(!_scrollview.hidden){ //没有隐藏
+            _scrollview.hidden = YES;
+            _currentImageView.hidden = NO;
+            _currentImageView.bgImage = [UIImage imageWithData:[_topNewsArray[_scrollview.picIndex] imageData]]; //图片
+            _currentImageView.picDesription = [_topNewsArray[_scrollview.picIndex] title]; //文字
+        }else{
+            [_scrollview setHidden:NO];
+            _currentImageView.hidden = YES;
+        }
+    }
+    NSLog(@"开始");
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat y = scrollView.contentOffset.y;
+    if (y == 0) { //回到顶部
+        if (_scrollview.hidden) {
+            _currentImageView.hidden = YES;
+            _scrollview.hidden = NO;
+        }
+        
+    }
 }
 
 //加载图片
