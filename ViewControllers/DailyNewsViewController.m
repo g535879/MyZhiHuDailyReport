@@ -47,13 +47,13 @@ typedef void (^GetImageData)(NSData *imageData);
 //在这里隐藏导航栏
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
 //    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
 //    [self.navigationController.navigationBar setAlpha:0.5];[
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:255 green:255 blue:255 alpha:1.0]] forBarMetrics:UIBarMetricsDefault];
 //    [self.navigationController.navigationBar.layer setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5].CGColor];
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:0.4 green:1 blue:1 alpha:0.2]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bigShadow.png"] forBarMetrics:UIBarMetricsCompactPrompt];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -205,16 +205,14 @@ typedef void (^GetImageData)(NSData *imageData);
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat y = scrollView.contentOffset.y;
     CGFloat x = scrollView.contentOffset.x;
-   // NSLog(@"%f",y);
+    NSLog(@"%f",y);
     if (y < 0) {
-        if (y <= -40) {
-            scrollView.contentOffset = CGPointMake(x, -40);
+        if (y <= -60) {  //最大偏移量
+            scrollView.contentOffset = CGPointMake(x, -60);
             return;
         }
        //调整图片大小和位置
         if (_scrollview.hidden) { //滚动视图隐藏状态
-            CGRect rect = _currentImageView.frame;
-            NSLog(@"pic++++++++++++Y%f",rect.origin.y);
             UILabel *label = (UILabel *)_currentImageView.subviews[1]; //图片描述
             
             static CGFloat originalY;  //描述原始中点y
@@ -240,6 +238,19 @@ typedef void (^GetImageData)(NSData *imageData);
             _currentImageView.center = imageViewCenter;
         }
         
+    }else if (y >=0 && y <= 150){ //用户往上推。调整字体的位置
+        UILabel *label = (UILabel *)_currentImageView.subviews[1]; //图片描述
+        static CGFloat originalY;  //描述原始中点y
+        static dispatch_once_t once;
+        dispatch_once(&once, ^{
+            originalY = label.center.y;
+        });
+        
+        //描述
+        CGPoint labelCenter = [label center];
+        labelCenter.y = originalY - fabs(y);
+        label.center = labelCenter;
+
     }
 }
 
